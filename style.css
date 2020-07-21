@@ -76,3 +76,15 @@ body {
     background: #fff;
     color: #333;
 }
+
+#page-1 h1{
+    animation: animate1 2s forwards ease-in-out;
+    position: relative;
+    top: -1000px;
+}
+
+@keyframes animate1 {
+    to {
+        top:0;
+    }
+}
