@@ -4,7 +4,7 @@
     --page-2-color: tan;
     --page-3-color: teal;
     --page-4-color: slateblue;
-    --animate-speed: 1s;
+    --animate-speed: 2s;
 }
 
 /* Body Styling */
@@ -77,14 +77,31 @@ body {
     color: #333;
 }
 
+/* Page One Animation */
 #page-1 h1{
-    animation: animate1 2s forwards ease-in-out;
-    position: relative;
-    top: -1000px;
+    /* My Attempt: (Worked) */
+    /* animation: animate1 2s forwards ease-in-out; */
+    /* position: relative;
+    top: -1000px; */
+
+    /* Move initial text off screen */
+    transform: translateY(-1600px);
+    animation: heading var(--animate-speed) forwards ease-in;
 }
 
-@keyframes animate1 {
+@keyframes heading {
     to {
-        top:0;
+        transform: translateY(0);
+    }
+}
+
+#page-1 p {
+    transform: translateX(-1800px);
+    animation: paragraph var(--animate-speed) forwards ease-in 1s;
+}
+
+@keyframes paragraph {
+    to {
+        transform: translateX(0);
     }
 }
